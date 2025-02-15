@@ -1,0 +1,48 @@
+/* Style général */
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+}
+
+/* Canvas plein écran */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Matrice en arrière-plan */
+#matrixCanvas {
+    z-index: -2;
+}
+
+/* Effet araignée en avant-plan */
+#spiderCanvas {
+    z-index: -1;
+}
+
+/* Bouton retour (style arrondi) */
+.back-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 15px; /* Bordures arrondies */
+    background: rgba(0, 0, 0, 0.7);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.back-button:hover {
+    background: #00ff00;
+    color: black;
+    transform: scale(1.05); /* Effet léger au survol */
+}

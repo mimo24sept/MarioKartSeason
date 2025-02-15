@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKWii Retro Rewind</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .project-content {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            background: rgba(0, 0, 0, 0.85);
+            border: 2px solid #00ff00;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px #00ff00;
+            color: #00ff00;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .project-content h1 {
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 2em;
+        }
+
+        .project-content p {
+            margin: 20px 0;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .download-buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-button {
+            padding: 15px 20px;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            text-decoration: none;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            transition: background 0.3s, transform 0.2s;
+            font-weight: bold;
+        }
+
+        .project-button:hover {
+            background: #00ff00;
+            color: black;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="matrixCanvas"></canvas>
+    <canvas id="spiderCanvas"></canvas>
+
+    <a href="index.html" class="back-button">Retour</a>
+
+    <div class="project-content">
+        <h1>MKWii Retro Rewind</h1>
+
+        <!-- Présentation générale -->
+        <p>
+            <strong>MKWii Retro Rewind</strong> est un mod inédit qui remet au goût du jour Mario Kart Wii.  
+            Ce projet vise à offrir une expérience nostalgique tout en intégrant des fonctionnalités modernes,  
+            des circuits rétro et des options inédites.  
+            Plongez dans des courses endiablées avec une performance améliorée et un contenu repensé.  
+        </p>
+
+        <!-- Instructions d'installation -->
+        <p>
+            <strong>Installation :</strong>  
+            1. Téléchargez la ROM et le launcher à l'aide des liens ci-dessous.  
+            2. Extrayez les fichiers téléchargés dans un dossier dédié.  
+            3. Lancez Dolphin Emulator et chargez la ROM.  
+            4. Ouvrez le launcher WeelWizard pour accéder aux circuits rétro.  
+        </p>
+
+        <!-- Informations complémentaires -->
+        <p>
+            <strong>Note :</strong>  
+            Ce mod nécessite Dolphin Emulator pour fonctionner.  
+            Assurez-vous d'utiliser la dernière version stable pour une compatibilité optimale.  
+            Bonne chance sur les circuits rétro ! 
+        </p>
+
+        <!-- Liens de téléchargement -->
+        <div class="download-buttons">
+            <a href="downloads/Mario Kart Wii (USA) (En,Fr,Es).rvz" class="project-button" download>Télécharger la ROM</a>
+            <a href="downloads/WheelWizard.exe" class="project-button" download>Télécharger le Launcher</a>
+            <a href="https://fr.dolphin-emu.org/" class="project-button" target="_blank">Accéder à Dolphin</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import { startMatrixEffect } from "./js/matrix.js";
+        startMatrixEffect();
+    </script>
+    
+    <script src="js/spider.js"></script>
+
+</body>
+</html>
