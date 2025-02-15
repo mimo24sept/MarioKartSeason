@@ -26,12 +26,36 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             font-size: 2em;
+            text-align: center;
         }
 
         .project-content p {
             margin: 20px 0;
             line-height: 1.6;
-            text-align: justify;
+            text-align: center;
+        }
+
+        .project-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .project-content ul li {
+            margin: 10px 0;
+            position: relative;
+            padding-left: 25px;
+            text-align: left;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .project-content ul li::before {
+            content: "➤";
+            position: absolute;
+            left: 0;
+            color: #00ff00;
         }
 
         .download-buttons {
@@ -73,32 +97,34 @@
 
         <!-- Présentation générale -->
         <p>
-            <strong>MKWii Retro Rewind</strong> est un mod inédit qui modernise Mario Kart Wii.  
-            Redécouvrez des circuits rétro emblématiques, des textures améliorées et des fonctionnalités supplémentaires.  
-            Cette version est optimisée pour Dolphin Emulator et compatible avec la version PAL du jeu.  
+            <strong>MKWii Retro Rewind</strong> modernise Mario Kart Wii avec des circuits rétro  
+            emblématiques, des visuels améliorés et des fonctionnalités inédites.  
+            Ce mod est conçu pour fonctionner avec Dolphin Emulator et offre une expérience  
+            revisitée et optimisée pour les passionnés du jeu.  
         </p>
 
         <!-- Instructions d'installation -->
-        <p>
-            <strong>Installation :</strong>  
-            1. Téléchargez la ROM et le launcher via les liens ci-dessous.  
-            2. Extrayez les fichiers dans un dossier dédié.  
-            3. Lancez Dolphin Emulator et chargez la ROM.  
-            4. Ouvrez le launcher WeelWizard pour accéder aux circuits rétro.  
-        </p>
+        <p><strong>Installation :</strong></p>
+        <ul>
+            <li>Téléchargez la ROM et le launcher via les liens ci-dessous.</li>
+            <li>Extrayez les fichiers dans un dossier de votre choix.</li>
+            <li>Lancez Dolphin Emulator et chargez la ROM téléchargée.</li>
+            <li>Démarrez WeelWizard pour accéder aux circuits rétro.</li>
+            <li>Amusez-vous sur les pistes avec vos amis en ligne ou en solo !</li>
+        </ul>
 
         <!-- Informations complémentaires -->
         <p>
-            <strong>Recommandations :</strong>  
-            - Utilisez Dolphin Emulator dans sa dernière version.  
-            - Vérifiez que votre PC dispose de suffisamment de ressources pour une expérience fluide.  
-            - La ROM fournie est strictement destinée aux propriétaires d'un exemplaire original de Mario Kart Wii.  
+            <strong>Recommandations :</strong><br>
+            - Utilisez la dernière version stable de Dolphin Emulator.<br>
+            - Vérifiez que votre machine dispose d'une configuration suffisante.<br>
+            - Ce mod est destiné uniquement aux détenteurs d'une copie originale de Mario Kart Wii.  
         </p>
 
         <!-- Liens de téléchargement -->
         <div class="download-buttons">
-            <a href="https://drive.google.com/file/d/1C9Y-6-vo1rvDQhxQ0kFZtojZTDVyDmbo/view?usp=sharing" class="project-button" target="_blank">Télécharger la ROM</a>
-            <a href="https://drive.google.com/file/d/10viN2No4zy07W3OXmrUypalkYjgidIjq/view?usp=sharing" class="project-button" target="_blank">Télécharger le Launcher</a>
+            <a href="https://drive.google.com/drive/folders/TON_LIEN_ROM_ICI" class="project-button" target="_blank">Télécharger la ROM</a>
+            <a href="https://drive.google.com/drive/folders/TON_LIEN_LAUNCHER_ICI" class="project-button" target="_blank">Télécharger le Launcher</a>
             <a href="https://fr.dolphin-emu.org/" class="project-button" target="_blank">Accéder à Dolphin</a>
         </div>
     </div>
