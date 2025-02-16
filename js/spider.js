@@ -12,7 +12,7 @@ resizeSpiderCanvas();
 // Initialisation des points
 let points = [];
 const maxPoints = 150;
-const activationDistance = 150;
+const activationDistance = 120;
 
 // Générer des points aléatoires
 for (let i = 0; i < maxPoints; i++) {

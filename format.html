@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKWii Retro Rewind - Formats de jeu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        #projects-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .project {
+            position: absolute;
+            width: 60%;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.85);
+            border: 2px solid #00ff00;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #00ff00;
+            color: #00ff00;
+            text-align: center;
+            opacity: 0.3;
+            transform: translateY(50px) scale(0.9);
+            transition: all 0.5s ease;
+            z-index: 1;
+        }
+
+        .project.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            z-index: 100;
+        }
+
+        .project h1 {
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 2em;
+        }
+
+        .project p {
+            margin: 20px 0;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .mac-buttons {
+            display: flex;
+            gap: 6px;
+            position: absolute;
+            top: 8px;
+            right: 10px;
+        }
+
+        .mac-buttons span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #00ff00;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            transition: background 0.3s, transform 0.2s;
+            z-index: 100;
+        }
+
+        .back-button:hover {
+            background: #00ff00;
+            color: black;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="matrixCanvas"></canvas>
+    <canvas id="spiderCanvas"></canvas>
+
+    <a href="index.html" class="back-button">Retour</a>
+
+    <!-- Conteneur des projets défilants -->
+    <div id="projects-container">
+        <!-- Fenêtre 1 : Tournois réguliers -->
+        <div class="project active" id="project1">
+            <div class="mac-buttons">
+                <span></span>
+                <span></span>
+            </div>
+            <h1>Tournois réguliers</h1>
+            <p>
+                Les tournois réguliers sont organisés chaque semaine. Chaque course permet de marquer des points  
+                selon votre classement. Ces points sont ensuite cumulés pour établir un classement général.  
+                À la fin de la saison, les meilleurs joueurs reçoivent des récompenses et leur nom dans le Hall of Fame.  
+            </p>
+            <p>
+                Ce format favorise la régularité et la participation continue, offrant ainsi une opportunité de montrer  
+                vos compétences au fil du temps et d'affronter des adversaires de tous niveaux.  
+            </p>
+            <p><strong>Objectif :</strong> Être régulier et accumuler un maximum de points.</p>
+        </div>
+
+        <!-- Fenêtre 2 : Compétition Time Attack -->
+        <div class="project" id="project2">
+            <div class="mac-buttons">
+                <span></span>
+                <span></span>
+            </div>
+            <h1>Compétition Time Attack</h1>
+            <p>
+                Le mode Time Attack est destiné aux joueurs qui aiment repousser leurs limites.  
+                Le but est simple : réaliser le meilleur temps possible sur les circuits désignés.  
+            </p>
+            <p>
+                Chaque mois, un ensemble de circuits est sélectionné. Les joueurs peuvent poster leurs temps et  
+                tenter de battre les records existants. Les meilleurs temps sont affichés sur le site et un classement  
+                spécial est mis à jour en temps réel.  
+            </p>
+            <p><strong>Objectif :</strong> Être le plus rapide, sans adversaire, juste vous et le chrono.</p>
+        </div>
+
+        <!-- Fenêtre 3 : Mode VR (Virtual Rating) -->
+        <div class="project" id="project3">
+            <div class="mac-buttons">
+                <span></span>
+                <span></span>
+            </div>
+            <h1>Mode VR (Virtual Rating)</h1>
+            <p>
+                Le mode VR reprend le système de points de Mario Kart Wii. Chaque joueur commence avec un certain nombre de points  
+                et gagne ou perd des points en fonction de ses performances en course.  
+            </p>
+            <p>
+                Plus vous battez de joueurs avec un score élevé, plus vous gagnez de points. Inversement, perdre contre des joueurs moins bien classés  
+                vous fera perdre davantage de points.  
+            </p>
+            <p>
+                Ce mode permet d'affronter des joueurs de votre niveau et d'évoluer dans un environnement compétitif et équilibré.  
+            </p>
+            <p><strong>Objectif :</strong> Augmenter son VR et devenir un joueur redouté sur la piste !</p>
+        </div>
+    </div>
+
+    <!-- Gestion du défilement -->
+    <script>
+        const projects = document.querySelectorAll('.project');
+        let currentProject = 0;
+
+        function showProject(index) {
+            projects.forEach((proj, i) => {
+                proj.classList.toggle('active', i === index);
+            });
+            currentProject = index;
+        }
+
+        window.addEventListener('wheel', (event) => {
+            if (event.deltaY > 0 && currentProject < projects.length - 1) {
+                showProject(currentProject + 1);
+            } else if (event.deltaY < 0 && currentProject > 0) {
+                showProject(currentProject - 1);
+            }
+        });
+
+        let touchStartY = 0;
+        window.addEventListener('touchstart', (event) => {
+            touchStartY = event.touches[0].clientY;
+        });
+
+        window.addEventListener('touchend', (event) => {
+            const touchEndY = event.changedTouches[0].clientY;
+            if (touchStartY - touchEndY > 50 && currentProject < projects.length - 1) {
+                showProject(currentProject + 1);
+            } else if (touchEndY - touchStartY > 50 && currentProject > 0) {
+                showProject(currentProject - 1);
+            }
+        });
+
+        showProject(0);
+    </script>
+
+    <script type="module">
+        import { startMatrixEffect } from "./js/matrix.js";
+        startMatrixEffect();
+    </script>
+
+    <script src="js/spider.js"></script>
+</body>
+</html>
