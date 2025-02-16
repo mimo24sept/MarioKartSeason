@@ -195,3 +195,185 @@ footer {
     z-index: 100;
     text-shadow: 0 0 5px #00ff00;
 }
+
+/* 🌌 Organisation horizontale centrée */
+#results-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    margin-top: -400px; /* Remonter légèrement pour centrer */
+}
+
+/* 🖼️ Chaque conteneur */
+.project-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.project {
+    width: 85%;
+    max-width: 450px;
+    height: 700px; /* Augmentation de la hauteur */
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #00ff00;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #00ff00;
+    color: #00ff00;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    z-index: 1;
+    margin: 0 10px;
+}
+
+.project.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    z-index: 100;
+}
+
+.project h1 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 2em;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+/* 📊 Liste des résultats */
+.results-list {
+    margin-top: 15px;
+    text-align: left;
+    max-height: 580px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #00ff00 rgba(0, 0, 0, 0.7);
+}
+
+.results-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.results-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.results-list::-webkit-scrollbar-thumb {
+    background-color: #00ff00;
+    border-radius: 10px;
+    border: 2px solid #003300;
+}
+
+.result-item {
+    margin: 10px 0;
+    padding: 12px;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #00ff00;
+    font-size: 13px;
+    transition: transform 0.3s ease;
+}
+
+.result-item:hover {
+    transform: scale(1.05);
+}
+
+/* ⏱️ Time Trial : défilement vertical */
+.time-trial-scroll {
+    height: 550px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #00ff00 rgba(0, 0, 0, 0.7);
+}
+
+.time-trial-scroll::-webkit-scrollbar {
+    width: 10px;
+}
+
+.time-trial-scroll::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.time-trial-scroll::-webkit-scrollbar-thumb {
+    background-color: #00ff00;
+    border-radius: 10px;
+    border: 2px solid #003300;
+}
+
+.time-trial-scroll .map {
+    scroll-snap-align: start;
+    border: 2px solid #00ff00;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+}
+
+.time-trial-scroll .map h2 {
+    margin-bottom: 12px;
+    font-size: 1.4em;
+    text-shadow: 0 0 4px #00ff00;
+}
+
+.screenshot-preview {
+    max-width: 250px;
+    border: 2px solid #00ff00;
+    border-radius: 7px;
+    margin-top: 10px;
+    box-shadow: 0 0 7px #00ff00;
+}
+
+/* 🍏 Mac-style buttons */
+.mac-buttons {
+    display: flex;
+    gap: 6px;
+    position: absolute;
+    top: 5px;
+    right: 7px;
+}
+
+.mac-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #00ff00;
+}
+
+/* 🔙 Bouton de retour */
+.back-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 18px;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    transition: background 0.3s, transform 0.2s;
+    z-index: 100;
+    font-size: 14px;
+}
+
+.back-button:hover {
+    background: #00ff00;
+    color: black;
+    transform: scale(1.05);
+}
