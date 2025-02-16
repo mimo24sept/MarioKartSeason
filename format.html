@@ -12,6 +12,7 @@
             justify-content: center;
             height: 100vh;
             position: relative;
+            flex-direction: column;
         }
 
         .project {
@@ -84,6 +85,35 @@
             color: black;
             transform: scale(1.05);
         }
+
+        .download-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 101;
+        }
+
+        .download-button a {
+            text-decoration: none;
+        }
+
+        .download-button button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-family: 'monospace', sans-serif;
+            border: 2px solid #00ff00;
+            background: black;
+            color: #00ff00;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .download-button button:hover {
+            background: #00ff00;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -155,6 +185,13 @@
         </div>
     </div>
 
+    <!-- Bouton de téléchargement -->
+    <div class="download-button">
+        <a href="downloads/reglements.txt" download="reglements.txt">
+            <button>Télécharger le règlement</button>
+        </a>
+    </div>
+
     <!-- Gestion du défilement -->
     <script>
         const projects = document.querySelectorAll('.project');
@@ -198,5 +235,6 @@
     </script>
 
     <script src="js/spider.js"></script>
+
 </body>
 </html>
