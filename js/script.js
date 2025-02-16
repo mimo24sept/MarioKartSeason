@@ -48,17 +48,3 @@ document.getElementById('register-form').addEventListener('submit', (e) => {
         document.getElementById('register-status').innerText = '✅ Compte créé avec succès !';
     }
 });
-
-// Gestion de la connexion
-document.getElementById('login-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const username = document.getElementById('login-username').value;
-    const password = document.getElementById('login-password').value;
-
-    const storedPassword = localStorage.getItem(username);
-    if (storedPassword && storedPassword === password) {
-        document.getElementById('login-status').innerText = '✅ Connexion réussie !';
-    } else {
-        document.getElementById('login-status').innerText = '❌ Nom d\'utilisateur ou mot de passe incorrect.';
-    }
-});

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats MKWii Retro Rewind</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Effets de fond -->
+    <canvas id="matrixCanvas"></canvas>
+    <canvas id="spiderCanvas"></canvas>
+
+    <!-- Bouton de retour -->
+    <a href="index.html" class="back-button">Retour</a>
+
+    <!-- Conteneurs des résultats en ligne -->
+    <div id="results-container">
+        
+        <!-- Conteneur 1 : Tournois réguliers -->
+        <div class="project-container">
+            <div class="project active">
+                <div class="mac-buttons">
+                    <span></span>
+                    <span></span>
+                </div>
+                <h1>🏆 Tournois réguliers</h1>
+                <div class="results-list">
+                    <div class="result-item">
+                        <p><strong>1️⃣ Joueur :</strong> MarioKartPro</p>
+                        <p><strong>🏆 Points :</strong> 350 pts</p>
+                    </div>
+                    <div class="result-item">
+                        <p><strong>2️⃣ Joueur :</strong> SpeedyLuigi</p>
+                        <p><strong>🏆 Points :</strong> 290 pts</p>
+                    </div>
+                    <div class="result-item">
+                        <p><strong>3️⃣ Joueur :</strong> ToadMaster</p>
+                        <p><strong>🏆 Points :</strong> 275 pts</p>
+                    </div>
+                    <div class="result-item">
+                        <p><strong>4️⃣ Joueur :</strong> YoshiSpeed</p>
+                        <p><strong>🏆 Points :</strong> 260 pts</p>
+                    </div>
+                    <div class="result-item">
+                        <p><strong>5️⃣ Joueur :</strong> LuigiTime</p>
+                        <p><strong>🏆 Points :</strong> 245 pts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteneur 2 : Time Trial avec défilement -->
+        <div class="project-container time-trial">
+            <div class="project active">
+                <div class="mac-buttons">
+                    <span></span>
+                    <span></span>
+                </div>
+                <h1>⏱️ Time Trial</h1>
+                <div class="time-trial-scroll">
+                    <div class="map">
+                        <h2>🗺️ Map 1 : Rainbow Road</h2>
+                        <div class="result-item">
+                            <p><strong>👤 Joueur :</strong> MarioKartPro</p>
+                            <p><strong>⏱️ Temps :</strong> 1:45.678</p>
+                            <img src="https://via.placeholder.com/300" alt="Screenshot" class="screenshot-preview">
+                        </div>
+                    </div>
+                    <div class="map">
+                        <h2>🗺️ Map 2 : Luigi Circuit</h2>
+                        <div class="result-item">
+                            <p><strong>👤 Joueur :</strong> SpeedyLuigi</p>
+                            <p><strong>⏱️ Temps :</strong> 0:58.210</p>
+                            <img src="https://via.placeholder.com/300" alt="Screenshot" class="screenshot-preview">
+                        </div>
+                    </div>
+                    <div class="map">
+                        <h2>🗺️ Map 3 : Koopa Cape</h2>
+                        <div class="result-item">
+                            <p><strong>👤 Joueur :</strong> ToadMaster</p>
+                            <p><strong>⏱️ Temps :</strong> 2:03.564</p>
+                            <img src="https://via.placeholder.com/300" alt="Screenshot" class="screenshot-preview">
+                        </div>
+                    </div>
+                    <div class="map">
+                        <h2>🗺️ Map 4 : Mushroom Gorge</h2>
+                        <div class="result-item">
+                            <p><strong>👤 Joueur :</strong> YoshiSpeed</p>
+                            <p><strong>⏱️ Temps :</strong> 1:35.999</p>
+                            <img src="https://via.placeholder.com/300" alt="Screenshot" class="screenshot-preview">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteneur 3 : Mode VR -->
+        <div class="project-container">
+            <div class="project active">
+                <div class="mac-buttons">
+                    <span></span>
+                    <span></span>
+                </div>
+                <h1>🎮 Mode VR</h1>
+                <div class="results-list">
+                    <div class="result-item">
+                        <p><strong>1️⃣ Joueur :</strong> VRKing42</p>
+                        <p><strong>🎯 VR :</strong> 8500</p>
+                    </div>
+                    <div class="result-item">
+                        <p><strong>2️⃣ Joueur :</strong> SpeedVR</p>
+                        <p><strong>🎯 VR :</strong> 7900</p>
+                    </div>
+                    <div class="result-item">
+                        <p><strong>3️⃣ Joueur :</strong> LuigiSniper</p>
+                        <p><strong>🎯 VR :</strong> 7600</p>
+                    </div>
+                    <div class="result-item">
+                        <p><strong>4️⃣ Joueur :</strong> ToadRunner</p>
+                        <p><strong>🎯 VR :</strong> 7300</p>
+                    </div>
+                    <div class="result-item">
+                        <p><strong>5️⃣ Joueur :</strong> YoshiBoss</p>
+                        <p><strong>🎯 VR :</strong> 7000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animation -->
+    <script src="js/spider.js"></script>
+    <script type="module">
+        import { startMatrixEffect } from "./js/matrix.js";
+        startMatrixEffect();
+    </script>
+
+</body>
+</html>
