@@ -15,7 +15,7 @@
 
         <!-- Conteneur des projets -->
         <div id="projects-container">
-            <div class="project" id="project1">
+            <div class="project active" id="project1">
                 <div class="window-header">
                     <div class="mac-buttons">
                         <span class="green"></span>
@@ -25,6 +25,7 @@
                 <h2>Comment Installer</h2>
                 <a href="Install.html" class="project-button">Install Now</a>
             </div>
+
             <div class="project" id="project2">
                 <div class="window-header">
                     <div class="mac-buttons">
@@ -35,6 +36,7 @@
                 <h2>Format</h2>
                 <a href="format.html" class="project-button">Voir les formats</a>
             </div>
+
             <div class="project" id="project3">
                 <div class="window-header">
                     <div class="mac-buttons">
@@ -44,6 +46,40 @@
                 </div>
                 <h2>Projet 3</h2>
                 <a href="lien-projet-3.html" class="project-button">Voir le projet</a>
+            </div>
+
+            <!-- Fenêtre 4 : Créer un compte -->
+            <div class="project" id="project4">
+                <div class="window-header">
+                    <div class="mac-buttons">
+                        <span class="green"></span>
+                        <span class="green"></span>
+                    </div>
+                </div>
+                <h2>Créer un compte</h2>
+                <form id="register-form" class="auth-form">
+                    <input type="text" id="register-username" placeholder="Nom d'utilisateur" required>
+                    <input type="password" id="register-password" placeholder="Mot de passe" required>
+                    <button type="submit" class="project-button">Créer le compte</button>
+                </form>
+                <p id="register-status"></p>
+            </div>
+
+            <!-- Fenêtre 5 : Connexion -->
+            <div class="project" id="project5">
+                <div class="window-header">
+                    <div class="mac-buttons">
+                        <span class="green"></span>
+                        <span class="green"></span>
+                    </div>
+                </div>
+                <h2>Se connecter</h2>
+                <form id="login-form" class="auth-form">
+                    <input type="text" id="login-username" placeholder="Nom d'utilisateur" required>
+                    <input type="password" id="login-password" placeholder="Mot de passe" required>
+                    <button type="submit" class="project-button">Se connecter</button>
+                </form>
+                <p id="login-status"></p>
             </div>
         </div>
 
@@ -60,7 +96,5 @@
         import { startMatrixEffect } from "./js/matrix.js";
         startMatrixEffect();
     </script>
-    <script src="js/loading.js"></script>
-
 </body>
 </html>

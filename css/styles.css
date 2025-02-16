@@ -107,3 +107,33 @@ body {
     color: black;
     transform: scale(1.05); /* Effet léger au survol */
 }
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.auth-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    width: 80%;
+    text-align: center;
+    border: 2px solid #00ff00;
+}
+
+.auth-form button {
+    margin-top: 10px;
+}
+
+#register-status, #login-status {
+    margin-top: 15px;
+    color: #00ff00;
+    font-weight: bold;
+}
